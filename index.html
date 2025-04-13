@@ -21,111 +21,180 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/101029018" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #4fc3f7;
-            --background-color: #f8f9fa;
-            --card-color: #ffffff;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: #333;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
+    :root {
+        /* Обновленная цветовая палитра */
+        --primary-color: #6C63FF;  /* Фиолетово-синий */
+        --secondary-color: #4D44DB; /* Темно-синий */
+        --accent-color: #FF6584;   /* Розовый */
+        --background-color: #F9F9FF; /* Светло-фиолетовый фон */
+        --card-color: #FFFFFF;
+        --text-color: #2E2E3A;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    header {
+        text-align: center;
+        padding: 50px 0;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border-radius: 0 0 25px 25px;
+        box-shadow: 0 10px 30px rgba(108, 99, 255, 0.2);
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    header::after {
+        content: "{}";
+        position: absolute;
+        bottom: -30px;
+        right: 20px;
+        font-size: 120px;
+        color: rgba(255, 255, 255, 0.05);
+        font-family: monospace;
+    }
+    
+    h1 {
+        margin: 0;
+        font-size: 2.8rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+        opacity: 0.9;
+        margin-top: 15px;
+        font-weight: 300;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .labs-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+        padding: 20px 0;
+    }
+    
+    .lab-card {
+        background: var(--card-color);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-top: 5px solid var(--accent-color);
+        position: relative;
+    }
+    
+    .lab-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .lab-title {
+        color: var(--secondary-color);
+        margin-top: 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .lab-title::before {
+        content: "→";
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+    
+    .lab-card p {
+        color: #5A5A72;
+        margin-bottom: 25px;
+        line-height: 1.7;
+    }
+    
+    .lab-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+        padding: 12px 24px;
+        background: linear-gradient(45deg, var(--accent-color), #FF8E9E);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(255, 101, 132, 0.3);
+        width: fit-content;
+    }
+    
+    .lab-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 101, 132, 0.4);
+    }
+    
+    footer {
+        text-align: center;
+        margin-top: 70px;
+        padding: 30px;
+        color: #7A7A8C;
+        font-size: 1rem;
+        position: relative;
+    }
+    
+    footer::before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        margin: 0 auto 25px;
+        border-radius: 3px;
+    }
+    
+    footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    footer a:hover {
+        color: var(--accent-color);
+    }
+    
+    @media (max-width: 768px) {
         h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
         }
         
         .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-top: 10px;
-        }
-        
-        .labs-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            font-size: 1.1rem;
         }
         
         .lab-card {
-            background: var(--card-color);
-            border-radius: 10px;
             padding: 25px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 4px solid var(--accent-color);
         }
-        
-        .lab-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        }
-        
-        .lab-title {
-            color: var(--secondary-color);
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-        
-        .lab-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 16px;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .lab-link:hover {
-            background-color: var(--secondary-color);
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 600px) {
-            .labs-container {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <header>
