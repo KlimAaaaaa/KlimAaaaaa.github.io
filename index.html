@@ -216,11 +216,28 @@
                 <p>Вариант 1. Вычисление GC-состава</p>
                 <a href="L2.py" class="lab-link" download>Скачать L2.py</a>
             </div>
-            <div class="lab-card">
-                <h2 class="lab-title">Лабораторная работа 3</h2>
-                <p>Задание 1. Построение диаграммы рассеяния</p>
-                <a href="L3.1.py" class="lab-link" download>Скачать L3.1.py</a>
-            </div>
+           <div class="lab-card">
+    <h2 class="lab-title">Лабораторная работа 3</h2>
+    <p>Задание 1. Построение диаграммы рассеяния</p>
+    <a href="L3.py" class="lab-link" download>Скачать L3.py</a>
+    
+    <!-- Добавленные ссылки на задания -->
+    <div class="task-links" style="margin-top: 15px; display: none;" id="l3-tasks">
+        <a href="L3_task1.py" class="lab-link" download style="background: linear-gradient(45deg, #6C63FF, #4D44DB); margin-right: 10px;">Задание 1</a>
+        <a href="L3_task2.py" class="lab-link" download style="background: linear-gradient(45deg, #FF6584, #FF8E9E);">Задание 2</a>
+    </div>
+</div>
+
+<script>
+// Добавляем обработчик клика для карточки L3
+document.querySelector('.lab-card:nth-child(3)').addEventListener('click', function(e) {
+    // Проверяем, что клик не по ссылке скачивания
+    if(!e.target.classList.contains('lab-link')) {
+        const taskLinks = document.getElementById('l3-tasks');
+        taskLinks.style.display = taskLinks.style.display === 'none' ? 'block' : 'none';
+    }
+});
+</script>
            
         </div>
     </div>
